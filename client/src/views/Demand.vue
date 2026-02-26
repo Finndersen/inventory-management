@@ -1,8 +1,10 @@
 <template>
   <div class="demand">
     <div class="page-header">
-      <h2>{{ t('demand.title') }}</h2>
-      <p>{{ t('demand.description') }}</p>
+      <div>
+        <h2>{{ t('demand.title') }}</h2>
+        <p>{{ t('demand.description') }}</p>
+      </div>
     </div>
 
     <div v-if="loading" class="loading">{{ t('common.loading') }}</div>
@@ -232,78 +234,78 @@ export default {
 }
 
 .trend-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: all 0.2s ease;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: all var(--transition);
 }
 
 .trend-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
 }
 
 .increasing-card {
-  border-left: 4px solid #10b981;
+  border-left: 3px solid var(--status-green);
 }
 
 .stable-card {
-  border-left: 4px solid #3b82f6;
+  border-left: 3px solid var(--accent);
 }
 
 .decreasing-card {
-  border-left: 4px solid #ef4444;
+  border-left: 3px solid var(--status-red);
 }
 
 .trend-header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .trend-icon {
-  width: 48px;
-  height: 48px;
+  border-radius: var(--radius-md);
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  font-size: 1.75rem;
-  font-weight: 700;
   flex-shrink: 0;
 }
 
 .increasing-card .trend-icon {
-  background: #d1fae5;
-  color: #059669;
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--status-green);
 }
 
 .stable-card .trend-icon {
-  background: #dbeafe;
-  color: #2563eb;
+  background: var(--accent-subtle);
+  color: var(--accent);
 }
 
 .decreasing-card .trend-icon {
-  background: #fee2e2;
-  color: #dc2626;
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--status-red);
 }
 
 .trend-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #64748b;
+  color: var(--text-muted);
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 .trend-count {
+  color: var(--text-primary);
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0f172a;
-  margin-top: 0.25rem;
+  margin-top: 2px;
 }
 
 .trend-items {
@@ -316,19 +318,19 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0.75rem;
-  background: #f8fafc;
-  border-radius: 6px;
-  transition: background 0.2s;
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
 }
 
 .trend-item:hover {
-  background: #f1f5f9;
+  background: var(--bg-hover);
 }
 
 .item-name {
-  font-size: 0.875rem;
-  color: #0f172a;
+  color: var(--text-primary);
+  font-size: 13px;
   font-weight: 500;
   flex: 1;
   overflow: hidden;
@@ -344,25 +346,24 @@ export default {
 }
 
 .increasing-card .item-change {
-  color: #059669;
+  color: var(--status-green);
 }
 
 .stable-card .item-change {
-  color: #3b82f6;
+  color: var(--accent);
 }
 
 .decreasing-card .item-change {
-  color: #dc2626;
+  color: var(--status-red);
 }
 
 .item-change.neutral {
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 .more-items {
-  font-size: 0.813rem;
-  color: #64748b;
-  font-style: italic;
+  color: var(--text-muted);
+  font-size: 12px;
   text-align: center;
   padding: 0.5rem;
 }
